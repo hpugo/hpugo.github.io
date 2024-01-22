@@ -7,5 +7,17 @@ export const search = async searchTerm =>
     sample_shoes.filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-
+export const getAllBySize = async size => {
+     if (size === 'ALL') return getAll();
+    return sample_shoes.filter(item => {
+            const itemSize = Number(item.size);
+    
+     if (!isNaN(itemSize)) {
+         return itemSize === Number(size);
+         }
+    
+          return false;
+        });
+    };
+    
     

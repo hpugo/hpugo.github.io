@@ -11,7 +11,7 @@ export default function Sizes({sizes, forShoePage}) {
     >
         {
             sizes.map(size =>
-                <Link key={size.name} to={`/tag/${size.name}`}>
+                <Link key={size.name} to={`/size/${size.name}`}>
                     {size.name}
                     {!forShoePage && `(${size.count})`}
                 </Link>)
