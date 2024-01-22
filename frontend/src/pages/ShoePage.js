@@ -3,6 +3,7 @@ import classes from '../components/css/shoepage.module.css';
 import { useParams } from "react-router-dom";
 import { getById } from "../services/ShoeService";
 import Sizes from "../components/Sizes";
+import Price from "../components/Price";
 
 export default function ShoePage() {
     const [shoe, setShoe] = useState({});
@@ -22,15 +23,16 @@ export default function ShoePage() {
             <div className={classes.header}>
                 <span className={classes.name}>{shoe.name}</span>
             </div>
-            <div className={classes.price}>{shoe.price}</div>
-            <div className={classes.condition}>{shoe.condition}</div>
-            <div className={classes.size}>
-                {shoe.sizes && (
-                    <Sizes sizes={shoe.sizes.map(size => ({ name: size }))} forShoePage={true}/>
-                )}
+            <div className={classes.condition}>Condition:{shoe.condition}</div>
+            <div className={classes.price}><Price price={shoe.price}/></div>
+            <div className={classes.size}> Size: {shoe.size} </div>
+            <div>
+                <button>
+                    Add to Cart
+                </button>
             </div>
-            
         </div>
+        
     </div> 
     )}
     </>

@@ -15,7 +15,7 @@ export default function Thumbnails({shoes}) {
                     <div className={classes.content}>
                         <div className={classes.name}>{shoes.name}</div>
                         <div className={classes.size}>{shoes.size}</div>
-                        <div className={classes.condition}>{shoes.condition}</div>
+                        <div className={classes.condition}>Condition:{shoes.condition}</div>
                         <div className={classes.price}><Price price={shoes.price} /></div>
                     </div>
 

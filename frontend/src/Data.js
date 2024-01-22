@@ -29,7 +29,7 @@ export const sample_shoes = [
     {
         id:'4',
         name: 'Jordan 1 Mocha',
-        size: [5.5, 11],
+        size: 11,
         price: 550,
         imageUrl:'mocha1.jpeg',
         condition: 'new',
@@ -38,7 +38,7 @@ export const sample_shoes = [
     {
         id:'5',
         name: 'Jordan 4 SB',
-        size: [9, 10, 11],
+        size: 9,
         price: 400,
         imageUrl:'sb4.jpeg',
         condition: 'used',
@@ -86,7 +86,7 @@ export const sample_shoes = [
 
  export const sample_sizes = [
     {name: 'All', count: 9},
-    { name: '5.5', count: 1 },
+    { name: '5.5', count: 0},
     { name: '6', count: 0 },
     { name: '6.5', count: 0 },
     { name: '7', count: 0 },
@@ -97,5 +97,5 @@ export const sample_shoes = [
     { name: '9.5', count: 1 },
     { name: '10', count: 2 },
     { name: '10.5', count: 1 },
-    { name: '11', count: 5 },
+    { name: '11', count: 3 },
  ];
