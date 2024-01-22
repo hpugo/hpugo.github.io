@@ -8,6 +8,6 @@ export default function AppRoutes() {
         <Route path="/" element={<HomePage/> }/>
         <Route path="/search/:searchTerm" element={<HomePage />} />
         <Route path="/size/:size" element={<HomePage />} />
-        <Route path="/shoe/:id" element={<ShoePage />} />
+        <Route path="/shoes/:id" element={<ShoePage />} />
     </Routes>;
 }

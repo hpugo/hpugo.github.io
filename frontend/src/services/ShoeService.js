@@ -20,6 +20,6 @@ export const getAllBySize = async size => {
         });
     };
 export const getById = async shoeId =>
-    sample_shoes.find(item => item.id == String(shoeId));
+    sample_shoes.find(item => item.id == shoeId);
     
     
