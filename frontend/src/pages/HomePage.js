@@ -3,6 +3,7 @@ import { getAll, search } from "../services/ShoeService";
 import Thumbnails from "../components/Thumbnails";
 import { useParams } from "react-router-dom";
 import Search from "../components/Search";
+import Sizes from "../components/Sizes";
 
 const initialState = { shoes: [] };
 
@@ -25,6 +26,7 @@ export default function HomePage() {
     }, [searchTerm])
     return <>
     <Search />
+    <Sizes />
     <Thumbnails shoes={shoes}/>
     </>;
 }

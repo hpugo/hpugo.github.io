@@ -82,4 +82,19 @@ export const sample_shoes = [
         brand: 'adidas'
     },
 
- ]
+ ];
+
+ export const sample_sizes = [
+    { name: '5.5', count: 0 },
+    { name: '6', count: 0 },
+    { name: '6.5', count: 0 },
+    { name: '7', count: 0 },
+    { name: '7.5', count: 0 },
+    { name: '8', count: 0 },
+    { name: '8.5', count: 1 },
+    { name: '9', count: 1 },
+    { name: '9.5', count: 1 },
+    { name: '10', count: 2 },
+    { name: '10.5', count: 1 },
+    { name: '11', count: 3 },
+ ];
