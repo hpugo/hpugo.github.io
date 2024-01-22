@@ -1,7 +1,7 @@
-import React, { useReducer } from "react";
-import { getAll } from "../services/ShoeService";
-import { useEffect  } from "react";
+import React, { useReducer, useEffect } from "react";
+import { getAll, search } from "../services/ShoeService";
 import Thumbnails from "../components/Thumbnails";
+import { useParams } from "react-router-dom";
 
 const initialState = { shoes: [] };
 
@@ -16,10 +16,12 @@ const reducer = (state, action) => {
 export default function HomePage() {
     const [state, dispatch] = useReducer(reducer, initialState);
     const { shoes } = state;
+    const { searchTerm } = useParams();
 
     useEffect(() => {
-        getAll().then(foods => dispatch ({ type: 'SHOES_LOADED', payload: foods }))
-    }, [])
+        const loadShoes = searchTerm ? search(searchTerm) : getAll();
+        loadShoes.then(shoes => dispatch ({ type: 'SHOES_LOADED', payload: shoes }))
+    }, [searchTerm])
     return <>
     <Thumbnails shoes={shoes}/>
     </>;

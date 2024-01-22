@@ -1,4 +1,4 @@
-import React9 from "react";
+import React from "react";
 
 export default function Price({price, locale, currency}) {
     const formatPrice =  () => 
@@ -7,11 +7,10 @@ export default function Price({price, locale, currency}) {
         currency,
     }).format(price);
 
-    return <span>{formatPrice()}</span>
-
-
-
-    return(
-        <div>Price</div>
-    )
+    return <span>{formatPrice()}</span>;
 }
+Price.defaultProps = {
+    locale:'en-US',
+    currency: 'USD'
+}; 
+

@@ -6,6 +6,7 @@ export const sample_shoes = [
         price: 450,
         imageUrl: 'military4.jpeg',
         condition: 'new',
+        brand: 'nike',
     },
     {
         id:'2',
@@ -14,6 +15,7 @@ export const sample_shoes = [
         price: 400,
         imageUrl:'black_canvas.jpeg',
         condition: 'new',
+        brand: 'nike',
     },
     {
         id:'3',
@@ -22,6 +24,7 @@ export const sample_shoes = [
         price: 500,
         imageUrl:'chicago1.jpeg',
         condition: 'new',
+        brand: 'nike',
     },
     {
         id:'4',
@@ -30,6 +33,7 @@ export const sample_shoes = [
         price: 550,
         imageUrl:'mocha1.jpeg',
         condition: 'new',
+        brand: 'nike',
     },
     {
         id:'5',
@@ -38,6 +42,7 @@ export const sample_shoes = [
         price: 400,
         imageUrl:'sb4.jpeg',
         condition: 'used',
+        brand: 'nike',
     },
     {
         id:'6',
@@ -46,6 +51,8 @@ export const sample_shoes = [
         price: 400,
         imageUrl:'unc4.jpeg',
         condition: 'new',
+        brand: 'nike',
+
     },
     {
         id:'7',
@@ -54,6 +61,7 @@ export const sample_shoes = [
         price: 250,
         imageUrl:'unc1.jpeg',
         condition: 'new',
+        brand: 'nike',
     },
     {
         id:'8',
@@ -62,6 +70,7 @@ export const sample_shoes = [
         price: 300,
         imageUrl:'yeezy350corered.jpeg',
         condition: 'new',
+        brand: 'adidas'
     },
     {
         id:'9',
@@ -70,6 +79,7 @@ export const sample_shoes = [
         price: 500,
         imageUrl:'yeezy700wave.jpeg',
         condition: 'new',
+        brand: 'adidas'
     },
 
  ]
