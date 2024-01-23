@@ -16,5 +16,61 @@
     object-fit: contain; 
     height: 40rem;
     margin: .5rem;
+}
 
+.details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0;
+    border-radius: 3rem;
+    padding: 2rem;
+    color: black;
+    /* font-size: 2rem; */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+ .name {
+    font-size: 2rem;
+    font-weight: bold;
+ }
+
+ .condition {
+    display: flex;
+    flex-wrap: wrap;
+    margin: .8rem 0;
+ }
+
+.size{
+    margin-top: 1rem;
+} 
+.price{
+    font-size: 1.6rem;
+    margin: .5rem 2rem .5rem 0;
+    color: rgb(144, 28, 222);
+}
+
+.price::before{
+    content: 'Price:';
+    color: black;
+    margin-right: .8rem;
+}
+
+.container button {
+    color: white;
+    background-color: rgb(144, 28, 222);
+    border: none;
+    width: 40%;
+    font-size: 1.2rem;
+    padding: 1rem;
+    border-radius: 10rem;
+    outline: none;
+    margin-top: 1rem;
+}
+.container button:hover {
+    opacity: .8;
+    cursor: pointer;
 }
