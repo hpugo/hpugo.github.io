@@ -33,6 +33,7 @@
 }
 
 .condition {
+    padding: 1rem;
     position: absolute;
     top: .5rem;
     right: 1rem;
