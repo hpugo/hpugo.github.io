@@ -4,6 +4,7 @@ import Thumbnails from "../components/Thumbnails";
 import { useParams } from "react-router-dom";
 import Search from "../components/Search";
 import Sizes from "../components/Sizes";
+import NotFound from "../components/NotFound";
 
 const initialState = { shoes: [], sizes: [] };
 
@@ -35,6 +36,7 @@ export default function HomePage() {
     return <>
     <Search />
     <Sizes sizes={sizes}/>
+    {shoes.length === 0 && <NotFound />}
     <Thumbnails shoes={shoes}/>
     </>;
 }
