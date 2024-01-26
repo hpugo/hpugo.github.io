@@ -1,13 +1,22 @@
 import React, { useEffect, useState } from "react";
 import classes from '../components/css/shoepage.module.css';
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getById } from "../services/ShoeService";
 import Sizes from "../components/Sizes";
 import Price from "../components/Price";
+import { useCart } from "../hooks/useCart";
 
 export default function ShoePage() {
     const [shoe, setShoe] = useState({});
     const {id} =  useParams();
+    const {addToCart} = useCart();
+    const navigate = useNavigate();
+
+    const handleAddToCart = () =>{
+        addToCart(shoe);
+        navigate('/cart');
+
+    }
 
     useEffect(() => { 
         getById(id).then(setShoe);
@@ -27,7 +36,7 @@ export default function ShoePage() {
             <div className={classes.price}><Price price={shoe.price}/></div>
             <div className={classes.size}> Size: {shoe.size} </div>
             <div>
-                <button>
+                <button onClick={handleAddToCart}>
                     Add to Cart
                 </button>
             </div>

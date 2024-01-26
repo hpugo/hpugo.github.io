@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import Price from "../components/Price";
 
 export default function CartPage() {
-  const { cart } = useCart();
+  const { cart, removeFromCart, changeQuantity } = useCart();
 
   return (
     <>
@@ -27,16 +27,18 @@ export default function CartPage() {
                 </div>
                 
                 <div>
-                  <select value={item.quantity} >
+                  <select value={item.quantity} onChange={e => changeQuantity(item, Number(e.target.value))} >
                     <option>1</option>
                     <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
                   </select>
                 </div>
                 <div>
                   <Price price={item.price} />
                 </div>
                 <div>
-                  <button className={classes.remove_button}>Remove</button>
+                  <button className={classes.remove_button} onClick={() => removeFromCart(item.shoe.id)}>Remove</button>
                 </div>
               </li>
             ))}
