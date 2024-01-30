@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import classes from '../components/css/shoepage.module.css';
 import { useNavigate, useParams } from "react-router-dom";
 import { getById } from "../services/ShoeService";
-import Sizes from "../components/Sizes";
 import Price from "../components/Price";
 import { useCart } from "../hooks/useCart";
+import NotFound from "../components/NotFound";
 
 export default function ShoePage() {
     const [shoe, setShoe] = useState({});
@@ -23,7 +23,7 @@ export default function ShoePage() {
     }, [id]);
     return ( 
     <>
-    { shoe && ( 
+    { !shoe? (<NotFound message="Shoes Not Found!" linkText="Back To Home"/>) : ( 
     <div className={classes.container}>
         <img className={classes.image} 
         src={`/shoes/${shoe.imageUrl}`}

@@ -1,6 +1,18 @@
 import React from 'react';
 import classes from './css/notfound.module.css'
+import { Link } from 'react-router-dom';
 
-export default function NotFound() {
-    return <div>404</div>
+export default function NotFound({message, linkRoute, linkText}) {
+    return (
+    <div className={classes.container}>
+        {message}
+        <Link to={linkRoute}>{linkText}</Link>
+    </div>
+    );
+}
+
+NotFound.defaultProps = {
+    message: 'Nothing Found!',
+    linkRoute: '/',
+    linkText: 'Go To Home'
 }

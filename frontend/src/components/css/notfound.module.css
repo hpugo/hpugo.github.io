@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: 300;
+    height: 15rem;
+    margin-top: 7rem;
+}
+
+.container a {
+    font-size: 3rem;
+    background-color: rgb(144, 28, 222);
+    color: white;
+    border-radius: 10rem;
+    margin: 1rem;
+    padding: .5rem 1rem;
+    opacity: .7;
+}
+
+.container a:hover {
+    opacity: 1;
+    cursor: pointer;
+}

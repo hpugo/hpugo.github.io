@@ -36,7 +36,7 @@ export default function HomePage() {
     return <>
     <Search />
     <Sizes sizes={sizes}/>
-    {shoes.length === 0 && <NotFound />}
+    {shoes.length === 0 && <NotFound linkText="Reset Search" />}
     <Thumbnails shoes={shoes}/>
     </>;
 }
