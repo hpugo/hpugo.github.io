@@ -1,25 +1,29 @@
-import { sample_shoes, sample_sizes } from "../Data";
+import axios from 'axios';
 
-export const getAll = async () => sample_shoes;
-export const getAllSizes = async () => sample_sizes;
+
+export const getAll = async () => {
+    const {data} = await axios.get('/api/shoes');
+    return data;
+};
+export const getAllSizes = async () => {
+    const {data} = await axios.get ('/api/shoes/sizes');
+    return data;
+};
 
 export const search = async searchTerm => 
-    sample_shoes.filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    {
+     const {data} = await axios.get('/api/shoes/search' + searchTerm);
+    return data;
+    }
 
 export const getAllBySize = async size => {
      if (size === 'ALL') return getAll();
-    return sample_shoes.filter(item => {
-            const itemSize = Number(item.size);
-    
-     if (!isNaN(itemSize)) {
-         return itemSize === Number(size);
-         }
-    
-          return false;
-        });
-    };
-export const getById = async shoeId =>
-    sample_shoes.find(item => item.id == shoeId);
+    const {data} = await axios.get ('/api/shoes/size/' + size);
+    return data;
+};
+export const getById = async shoeId => {
+    const {data} = await axios.get('/api/shoes/' + shoeId);
+    return data; 
+};
     
     

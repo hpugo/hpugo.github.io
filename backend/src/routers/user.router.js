@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { sample_users } from "../Data";
+import { sample_users } from "../Data.js";
 import  jwt  from "jsonwebtoken";
 import { BAD_REQUEST } from "../constants/htttpStatus.js";
 
@@ -32,3 +32,5 @@ const generateTokenResponse = user => {
         token,
     };
 }
+
+export default router;
