@@ -1,6 +1,7 @@
 import React from 'react';
 import InputContainer from '../components/InputContainer'
-import classes from '../components/css/input.module.css'
+import classes from './css/input.module.css'
+
 function Input( {label, type, defaultValue, onChange, onBlur, name, error}, ref) {
     const getErrorMessage = () => {
         if (!error) return;
@@ -28,11 +29,10 @@ function Input( {label, type, defaultValue, onChange, onBlur, name, error}, ref)
             onChange={onChange}
             onBlur={onBlur}
             />
-            {error && <div className={classes.erorr}>{getErrorMessage()}</div>}
+            {error && <div className={classes.error}>{getErrorMessage()}</div>}
         </InputContainer>
 
     );
-
 }
 
 

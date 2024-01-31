@@ -45,7 +45,6 @@ export default function LoginPage() {
                 })}
                     error={errors.email}
                     />
-                </form>
                 <Input
                 type="password"
                 label="Password"
@@ -54,6 +53,7 @@ export default function LoginPage() {
                 })}
                 error={errors.password} />
                 <Button type="submit" text="Login" />
+                </form>
             </div>
         </div>
     )
