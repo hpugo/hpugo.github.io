@@ -2,7 +2,7 @@ export const sample_shoes = [
     {
         id: '1',
         name: 'Jordan 4 Military Black',
-        size: 10,
+        sizes: 10,
         price: 450,
         imageUrl: 'military4.jpeg',
         condition: 'new',
@@ -11,7 +11,7 @@ export const sample_shoes = [
     {
         id:'2',
         name: 'Jordan 4 Black Canvas',
-        size: 10.5,
+        sizes: 10.5,
         price: 400,
         imageUrl:'black_canvas.jpeg',
         condition: 'new',
@@ -20,7 +20,7 @@ export const sample_shoes = [
     {
         id:'3',
         name: 'Jordan 1 Chicago Reimagined',
-        size: 11,
+        sizes: 11,
         price: 500,
         imageUrl:'chicago1.jpeg',
         condition: 'new',
@@ -29,7 +29,7 @@ export const sample_shoes = [
     {
         id:'4',
         name: 'Jordan 1 Mocha',
-        size: 11,
+        sizes: 11,
         price: 550,
         imageUrl:'mocha1.jpeg',
         condition: 'new',
@@ -38,7 +38,7 @@ export const sample_shoes = [
     {
         id:'5',
         name: 'Jordan 4 SB',
-        size: 9,
+        sizes: 9,
         price: 400,
         imageUrl:'sb4.jpeg',
         condition: 'used',
@@ -47,7 +47,7 @@ export const sample_shoes = [
     {
         id:'6',
         name: 'Jordan 4 UNC',
-        size: 8.5,
+        sizes: 8.5,
         price: 400,
         imageUrl:'unc4.jpeg',
         condition: 'new',
@@ -57,7 +57,7 @@ export const sample_shoes = [
     {
         id:'7',
         name: 'Jordan 1 UNC Toe',
-        size: 9,
+        sizes: 9,
         price: 250,
         imageUrl:'unc1.jpeg',
         condition: 'new',
@@ -66,7 +66,7 @@ export const sample_shoes = [
     {
         id:'8',
         name: 'Yeezy 350 Core Red',
-        size: 11,
+        sizes: 11,
         price: 300,
         imageUrl:'yeezy350corered.jpeg',
         condition: 'new',
@@ -75,7 +75,7 @@ export const sample_shoes = [
     {
         id:'9',
         name: 'Yeezy 700 Wave Runner',
-        size: 10,
+        sizes: 10,
         price: 500,
         imageUrl:'yeezy700wave.jpeg',
         condition: 'new',
@@ -94,7 +94,7 @@ export const sample_shoes = [
     { name: '8', count: 0 },
     { name: '8.5', count: 1 },
     { name: '9', count: 1 },
-    { name: '9.5', count: 1 },
+    { name: '9.5', count: 0 },
     { name: '10', count: 2 },
     { name: '10.5', count: 1 },
     { name: '11', count: 3 },

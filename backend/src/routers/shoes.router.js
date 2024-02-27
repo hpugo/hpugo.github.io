@@ -1,42 +1,59 @@
 import { Router } from "express";
-import { sample_shoes, sample_sizes } from "../Data.js";
+import { ShoeModel } from "../models/shoe.model.js";
+import handler from "express-async-handler";
 
 const router = Router();
 
-router.get('/', (req, res) => {
-    res.send(sample_shoes);
-});
-
-router.get('/sizes', (req, res) => {
-    res.send(sample_sizes);
-})
-
-router.get('/search/:searchTerm', (req, res) => {
-    const {searchTerm} = req.params;
-    const shoes = sample_shoes.filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    res.send(shoes)
-});
-
-router.get('/size/:size', (req, res) => {
-    const {size} = req.params;
-    const shoes = sample_shoes.filter(item => {
-        const itemSize = Number(item.size);
-
- if (!isNaN(itemSize)) {
-     return itemSize === Number(size);
-     }
-
-      return false;
-    });
+router.get('/', handler (async (req, res) => {
+    const shoes = await ShoeModel.find({});
     res.send(shoes);
-});
+})
+);
 
-router.get('/:shoeId', (req, res) => {
+router.get('/sizes', handler (async (req, res) => {
+    const sizes = await ShoeModel.aggregate([
+        {
+            $unwind: '$sizes',
+        },
+        {
+            $group: {
+                _id: '$sizes',
+                count: { $sum: 1 },
+            },
+        },
+        {$project :{
+            _id: 0,
+            name: '$_id',
+            count: '$count',
+        },},
+    ]).sort({ count: -1 });
+
+    res.send(sizes);
+    })
+);
+
+router.get('/search/:searchTerm', handler(async (req, res) => {
+    const {searchTerm} = req.params;
+    const searchRegex = new RegExp(searchTerm, 'i');
+
+    const shoes = await ShoeModel.find ({ name: {$regex: searchRegex}});
+    res.send(shoes)
+    })
+);
+
+router.get('/size/:size', handler (async (req, res) => {
+    const {size} = req.params;
+    const shoes = await ShoeModel.find({ sizes: size});
+    res.send(shoes);
+})
+);
+
+router.get('/:shoeId',handler( async (req, res) => {
     const {shoeId} = req.params;
-    const shoe = sample_shoes.find(item => item.id == shoeId);
+    const shoe = await ShoeModel.findById(shoeId);
     res.send(shoe)
 })
+);
 
 
 export default router;
