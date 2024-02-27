@@ -26,7 +26,7 @@ export default function ShoePage() {
     { !shoe? (<NotFound message="Shoes Not Found!" linkText="Back To Home"/>) : ( 
     <div className={classes.container}>
         <img className={classes.image} 
-        src={`/shoes/${shoe.imageUrl}`}
+        src={`${shoe.imageUrl}`}
         alt={shoe.name}/>
         <div className={classes.details}>
             <div className={classes.header}>
@@ -34,7 +34,7 @@ export default function ShoePage() {
             </div>
             <div className={classes.condition}>Condition:{shoe.condition}</div>
             <div className={classes.price}><Price price={shoe.price}/></div>
-            <div className={classes.size}> Size: {shoe.size} </div>
+            <div className={classes.size}> Size: {shoe.sizes} </div>
             <div>
                 <button onClick={handleAddToCart}>
                     Add to Cart

@@ -10,7 +10,7 @@ export default function Thumbnails({shoes}) {
                     <li key={shoes.id}>
                     <Link to={`/shoes/${shoes.id}`}>
                         <img className={classes.image}
-                            src={`/shoes/${shoes.imageUrl}`}
+                            src={`${shoes.imageUrl}`}
                             alt={shoes.name} />
                     <div className={classes.content}>
                         <div className={classes.name}>{shoes.name}</div>
